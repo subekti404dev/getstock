@@ -8,7 +8,7 @@ export const normalizePixabay = (data) => {
       type: "pixabay",
       urls: {
         small: d.previewURL,
-        medium: d.fullHDURL,
+        medium: d.webformatURL,
         large: d.largeImageURL,
       },
     };

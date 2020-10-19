@@ -5,10 +5,19 @@ import UnsplashSearch from "../vendors/unsplash/search";
 interface Options {
   page?: number;
   perPage?: number;
-  type?: "all" | "pexels" | "pixabay" | "unsplash";
+  type?: "pexels" | "pixabay" | "unsplash";
 }
 
-const vendors = [
+interface Search {
+  getData: (keyword: string, page?: number, perPage?: number) => any;
+}
+
+interface Vendor {
+  id: string;
+  search: Search;
+}
+
+const vendors: Vendor[] = [
   {
     id: "pexels",
     search: PexelsSearch,
@@ -25,32 +34,13 @@ const vendors = [
 
 class Search {
   static async getData(keyword: string, options: Options = {}) {
-    const perPage = options.perPage || 10;
+    const perPage = options.perPage || 20;
     const page = options.page || 1;
-    const type = options.type || "all";
-
-    if (type === "all") {
-      let results = [];
-      const vendorCount = vendors.length;
-      const modulus = perPage % vendorCount;
-      const divider = Math.floor(perPage / vendorCount);
-    
-      for (let index = 0; index < vendorCount; index++) {
-        const vendor = vendors[index];
-        const isLast = index === vendorCount - 1;
-        const perPage = isLast ? divider + modulus : divider;
-        let data = [];
-        if (perPage > 0) {
-          const res = await vendor.search.getData(keyword, page, perPage);
-          data = res.results;
-        }
-        results = results.concat(data);
-      }
-      return results;
-    }
+    const type = options.type || "pexels";
+    const vendor = vendors.find((v) => type === v.id);
+    const search: any = vendor?.search.getData;
+    return search(keyword, page, perPage);
   }
 }
 
 export { Search };
-
-Search.getData("nude").then(console.log);
