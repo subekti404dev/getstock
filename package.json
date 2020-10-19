@@ -1,5 +1,5 @@
 {
-    "name": "subekti-getstock",
+    "name": "node-getstock",
     "version": "1.0.0",
     "description": "",
     "main": "dist/index.js",

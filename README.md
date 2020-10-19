@@ -4,14 +4,14 @@ Bring image stock for free from several websites to you.
 
 ### Install
 ```
-$ npm install subekti-getstock
-$ yarn add subekti-getstock
+$ npm install node-getstock
+$ yarn add node-getstock
 ```
 
 ### Example
 
 ```
-import { Search } from 'subekti-getstock';
+import { Search } from 'node-getstock';
 
 Search
   .getData(keyword, options)
