@@ -1,6 +1,6 @@
-# getstock
+# getstock [![NPM version](https://img.shields.io/npm/v/node-getstock.svg?style=flat)](https://www.npmjs.com/package/node-getstock) [![NPM monthly downloads](https://img.shields.io/npm/dm/node-getstock.svg?style=flat)](https://npm-stat.com/charts.html?package=node-getstock) [![NPM total downloads](https://img.shields.io/npm/dt/node-getstock.svg?style=flat)](https://npm-stat.com/charts.html?package=node-getstock)
 
-Bring image stock for free from several websites to you.
+Bring image stock for free from several websites (unsplash, pexels, pixabay) to you.
 
 ### Install
 ```
