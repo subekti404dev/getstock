@@ -7,9 +7,9 @@ export const normalizePexels = (data) => {
       id: d.id,
       type: "pexels",
       urls: {
-        small: d.small,
-        medium: d.medium,
-        large: d.large,
+        small: d.src.small,
+        medium: d.src.medium,
+        large: d.src.large,
       },
     };
   });
