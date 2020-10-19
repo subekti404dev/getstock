@@ -1,9 +1,9 @@
-const axios = require("axios");
-const { normalizePexels } = require("./normalize");
-const { PexelsConstant } = require("./constant");
+import axios from "axios";
+import { normalizePexels } from "./normalize";
+import { PexelsConstant } from "./constant";
 const { baseUrl, key } = PexelsConstant;
 
-class Search {
+export default class Search {
   static async getData(keyword, page = 1, perPage = PexelsConstant.perPage) {
     keyword = keyword.split(" ").join("+");
     const url = `${baseUrl}search?query=${keyword}&per_page=${perPage}&page=${page}`;
@@ -25,5 +25,3 @@ class Search {
     }
   }
 }
-
-module.exports = Search;

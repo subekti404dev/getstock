@@ -1,9 +1,9 @@
-const axios = require("axios");
-const { normalizePixabay } = require("./normalize");
-const { PixabayConstant } = require("./constant");
+import axios from "axios";
+import { normalizePixabay } from "./normalize";
+import { PixabayConstant } from "./constant";
 const { baseUrl, key } = PixabayConstant;
 
-class Search {
+export default class Search {
   static async getData(keyword, page = 1, perPage = PixabayConstant.perPage) {
     keyword = keyword.split(" ").join("+");
     const url = `${baseUrl}?key=${key}&q=${keyword}&image_type=photo&pretty=true&per_page=${perPage}&page=${page}`;
@@ -21,4 +21,3 @@ class Search {
   }
 }
 
-module.exports = Search;
