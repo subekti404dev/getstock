@@ -1,12 +1,16 @@
 {
     "name": "node-getstock",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
         "build": "tsc",
         "prepare": "npm run build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/subekti404dev/getstock"
     },
     "keywords": [],
     "author": "Urip Subekti",
