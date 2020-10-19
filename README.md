@@ -24,10 +24,10 @@ Search
 ### Parameters
 
 ```
-keyword                string
+keyword                            string
 options
- - options.page        number
- - options.perPage     number
- - options.type        'pexels' | 'pixabay' | 'unsplash'
+ - options.page      1             number
+ - options.perPage   20            number
+ - options.type      'pexels'      'pexels'|'pixabay'|'unsplash'
 
 ```
